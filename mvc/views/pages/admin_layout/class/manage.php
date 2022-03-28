@@ -1,0 +1,191 @@
+<div class="m-subheader ">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">
+                QL Lớp
+            </h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="/testmvc/admin" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+                <li class="m-nav__separator"> -
+                </li>
+                <li class="m-nav__item">
+                    <a href="/testmvc/admin/teacher" class="m-nav__link">
+                        <span class="m-nav__link-text">
+                            QL Giáo Viên
+                        </span>
+                    </a>
+                </li>
+                <li class="m-nav__separator">
+                    -
+                </li>
+                <li class="m-nav__item">
+                    <a href="/testmvc/admin/student" class="m-nav__link">
+                        <span class="m-nav__link-text">
+                            QL Học Sinh
+                        </span>
+                    </a>
+                </li>
+                <li class="m-nav__separator">
+                    -
+                </li>
+                <li class="m-nav__item">
+                    <a href="/testmvc/admin/customer" class="m-nav__link">
+                        <span class="m-nav__link-text">
+                            QL Khách Hàng
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="m-content">
+
+    <div class="m-portlet m-portlet--mobile">
+        <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                    <h3 class="m-portlet__head-text">
+                        Danh Sách Lớp
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="m-portlet__body" style="padding-top: 0;padding-bottom: 0;">
+            <!--begin: Search Form -->
+            <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+                <div class="row align-items-center">
+                    <div class="col-xl-12 order-2 order-xl-1">
+                        <div class="form-group m-form__group row align-items-center">
+                            <div class="col-md-12"">
+							<a href=" /testmvc/admin/openclass"
+                                class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air"
+                                style="float: right;">
+                                <span>
+                                    <i class="la la-plus"></i>
+                                    <span>
+                                        Mở Lớp
+                                    </span>
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-separator m-separator--dashed d-xl-none"></div>
+                </div>
+            </div>
+        </div>
+        <!--end: Search Form -->
+        <!--begin: Datatable -->
+        <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded" id="local_data"
+            style="position: static; zoom: 1;">
+            <table class="m-datatable__table" style="display: block; min-height: 300px; overflow-x: auto;">
+                <thead class="m-datatable__head">
+                    <tr class="m-datatable__row" style="left: 0px;">
+                        <th data-field="RecordID"
+                            class="m-datatable__cell--center m-datatable__cell m-datatable__cell--check">
+                            <span style="width: 50px;">
+                                #
+                            </span>
+                        </th>
+                        <th data-field="OrderID" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 110px;">Tên Lớp</span>
+                        </th>
+                        <th data-field="ShipName" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 70px;">Khóa</span>
+                        </th>
+                        <th data-field="Currency" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 50px;">Số Buổi</span>
+                        </th>
+                        <th data-field="ShipAddress" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 120px;">Học Phí</span>
+                        </th>
+                        <th data-field="ShipDate" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 150px;">Giáo Viên</span>
+                        </th>
+                        <th data-field="ShipDate" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 100px;">Lịch học</span>
+                        </th>
+                        <th data-field="Latitude" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 70px;">Hoạt Động</span>
+                        </th>
+                        <th data-field="Actions" class="m-datatable__cell m-datatable__cell--sort">
+                            <span style="width: 110px;">Tác Vụ</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="m-datatable__body" style="">
+                    <?php $i = 1;
+                    foreach ($data['classManager'] as $key => $value) { ?>
+                    <tr data-row="0" class="m-datatable__row" style="left: 0px;">
+                        <td class="m-datatable__cell--center m-datatable__cell m-datatable__cell--check"
+                            data-field="RecordID">
+                            <span style="width: 50px;">
+                                <?php echo $i; ?>
+                            </span>
+                        </td>
+                        <td data-field="OrderID" class="m-datatable__cell">
+                            <span style="width: 110px;"><?php echo $value['tenlop']; ?></span>
+                        </td>
+                        <td data-field="ShipName" class="m-datatable__cell">
+                            <span style="width: 70px;"><?php echo $value['khoa']; ?></span>
+                        </td>
+                        <td data-field="ShipAddress" class="m-datatable__cell">
+                            <span style="width: 50px;"><?php echo $value['sobuoi']; ?></span>
+                        </td>
+                        <td data-field="ShipDate" class="m-datatable__cell">
+                            <span style="width: 120px;"><?php echo number_format($value['sotien']) . " VND"; ?></span>
+                        </td>
+                        <td data-field="Latitude" class="m-datatable__cell">
+                            <span style="width: 150px;"><?php if (empty($value['giaovien'])) {
+                                                                echo "---";
+                                                            } else echo $value['giaovien']; ?></span>
+                        </td>
+                        <td data-field="ShipDate" class="m-datatable__cell">
+                            <span style="width: 100px;"><?php echo $value['lichhoc']; ?></span>
+                        </td>
+                        <td data-field="Status" class="m-datatable__cell">
+                            <span style="width: 70px;">
+                                <span
+                                    class="m-badge <?php if ($value['hd'] == 'Không') {
+                                                                echo "m-badge--brand";
+                                                            } else echo "m-badge--success" ?> m-badge--wide"><?php echo $value['hd']; ?></span>
+                            </span>
+                        </td>
+
+
+                        <td data-field="Actions" class="m-datatable__cell">
+                            <span style="overflow: visible; position: relative; width: 110px;">
+                                <div class="dropdown">
+                                    <a href="#"
+                                        class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+                                        data-toggle="dropdown" ded="false">
+                                        <i class="la la-ellipsis-h"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" x-placement="top-end"
+                                        style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(33px, -6px, 0px);">
+                                        <a class="dropdown-item"
+                                            href="/testmvc/admin/editClass/<?php echo $value['id'] ?>"><i
+                                                class="la la-refresh"></i> Sửa</a>
+                                        <a class="dropdown-item"
+                                            href="/testmvc/admin/checkClass/<?php echo $value['id'] ?>"><i
+                                                class="la la-pencil-square-o"></i> Điểm danh</a>
+                                    </div>
+
+                                </div>
+                            </span>
+                        </td>
+                    </tr>
+                    <?php $i++;
+                    }  ?>
+                </tbody>
+            </table>
+        </div>
+        <!--end: Datatable -->
+    </div>
